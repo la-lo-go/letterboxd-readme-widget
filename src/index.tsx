@@ -17,7 +17,7 @@ if (!username) {
 }
 
 Bun.serve({
-  port: 8080,
+  port: process.env.PORT || 3000,
   async fetch(req) {
     const url = new URL(req.url);
     if (url.pathname.endsWith("/rss") || url.pathname.endsWith("/rss/")) {
@@ -33,4 +33,4 @@ Bun.serve({
   },
 });
 
-console.log("Server running at http://localhost:8080/");
+console.log("Server running at http://localhost:" + (process.env.PORT || 3000));
