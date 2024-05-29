@@ -20,8 +20,7 @@ Bun.serve({
   port: process.env.PORT || 3000,
   async fetch(req) {
     const url = new URL(req.url);
-    if (url.pathname.endsWith("/rss") || url.pathname.endsWith("/rss/")) {
-      console.log("Fetching RSS feed...");
+    if (url.pathname.endsWith("/") || url.pathname === "") {
       const reviews = await ParseRSS(rssUrl);
 
       return new Response(ReactDOMServer.renderToString(<Widget reviews={reviews}/>), {
