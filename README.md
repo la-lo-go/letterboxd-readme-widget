@@ -1,15 +1,18 @@
-# Elysia with Bun runtime
+# Letterboxd Readme Widget
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+This widget displays your latest Letterboxd diary entry on your GitHub profile README.
+
+## Usage
+
+To use this widget, add the following to your GitHub profile README:
+
+```md
+![Letterboxd]({URL})
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+## Deployment
 
-Open http://localhost:3000/ with your browser to see the result.
+1. Fork this repository
+2. Use [Vercel](https://vercel.com) to deploy your fork
+3. Set the environment variable:
+   - `LETTERBOXD_USERNAME`: Your Letterboxd username
